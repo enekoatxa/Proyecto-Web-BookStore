@@ -7,8 +7,8 @@ from .models import Libro, Editorial, Autor
 def index(request):
 	# libros = get_list_or_404(Libro.objects.order_by('anyo').groupBy(editorial))
 	libros = Libro.objects.raw('SELECT * FROM libros ORDER BY anyo GROUP BY editorial')
-	editoriales = get_list_or_404(Departamento.objects.order_by('nombre'))
-	autores = get_list_or_404(Departamento.objects.order_by('nombre'))
+	editoriales = get_list_or_404(Editorial.objects.order_by('nombre'))
+	autores = get_list_or_404(Autor.objects.order_by('nombre'))
 	context = {'libros': libros, 'editoriales': editoriales, 'autores': autores}
 	return render(request, 'index.html', context)
 

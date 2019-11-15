@@ -1,0 +1,20 @@
+% extends 'base.html' %}
+
+{% block titulo %} Tipos de articulos {% endblock %}
+
+{% block contenido %}
+<h2>Datos de la editorial: </h2>
+
+{% if editorial %}
+    <ul>
+         <li>
+           Nombre de la editorial: {{ editorial.nombre}}
+         </li>
+        <!-- faltan: igual habria que poner la lista de libros que tiene cada editorial??-->
+
+    </ul>
+{% else %}
+    <p>No existe este articulo.</p>
+{% endif %}
+
+{% endblock %}

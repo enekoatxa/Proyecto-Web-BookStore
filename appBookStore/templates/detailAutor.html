@@ -1,0 +1,24 @@
+% extends 'base.html' %}
+
+{% block titulo %} Todos los autores {% endblock %}
+
+{% block contenido %}
+<h2>Datos del autor: </h2>
+
+{% if autor %}
+    <ul>
+        <li>
+           Nombre: {{ autor.nombre}} {{ autor.apellido}}
+        </li>
+        <li>
+           Fecha nacimiento: {{ autor.fecha_nacimiento}} 
+        </li>
+        
+        <!-- falta: la imagen-->
+
+    </ul>
+{% else %}
+    <p>No existe ningun autor.</p>
+{% endif %}
+
+{% endblock %}
