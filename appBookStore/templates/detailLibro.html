@@ -7,6 +7,12 @@
 
 {% if libro %}
     <ul>
+        {% load static %}
+        <li>
+          {% with 'img/'|add:libro.portada.name as image_path %}
+          <img alt="{{ libro.foto.name }}" src="{% static image_path %}" height="300" width="200" /></a></th>
+        {% endwith %}  
+        </li>
         <li>
            Titulo: {{ libro.nombre}}
         </li>
@@ -25,8 +31,12 @@
          <li>
            Numero de paginas: {{ libro.num_paginas}}
          </li>
+         <li>
+           Editorial: {{ libro.editorial}}
+         </li>
+         <!-- Igual gaizki dao editoriala, baino ondo behar luke, toStr funtzioak ondo funtzionatzen badu -->
         <!-- faltan: la imagen de la portada,la editorial y los autores -->
-
+        
     </ul>
 {% else %}
     <p>No existe este articulo.</p>

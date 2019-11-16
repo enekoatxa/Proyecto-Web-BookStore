@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Listado de todos los libros de la tienda{% endblock %}
+
+{% block contenido %}
+<h2>Listado de libros</h2>
+{% if listaLibros %}
+	<ul>
+	{% for l in listaLibros %}
+		<li>
+			<a href="{% url 'detailLibros' l.id %}">{{l.titulo}}</a>
+		</li>
+	{% endfor %}
+	</ul>
+{% else %}
+<p>No hay ningun libro en la tienda. ¡Atentos a nuevas llegadas!</p>
+{% endif %}
+{% endblock %}

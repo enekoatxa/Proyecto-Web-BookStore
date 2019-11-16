@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Listado de todos los autores de los que tenemos libros en la tienda{% endblock %}
+
+{% block contenido %}
+<h2>Listado de autores</h2>
+{% if listaAutores %}
+	<ul>
+	{% for a in listaAutores %}
+		<li>
+			<a href="{% url 'detailAutores' a.id %}">{{a.nombre}} {{a.apellido}}</a>
+		</li>
+	{% endfor %}
+	</ul>
+{% else %}
+<p>No hay ningun autor en la tienda.</p>
+{% endif %}
+{% endblock %}
