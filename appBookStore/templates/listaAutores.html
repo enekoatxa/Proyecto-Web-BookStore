@@ -8,7 +8,7 @@
 	<ul>
 	{% for a in listaAutores %}
 		<li>
-			<a href="{% url 'detailAutores' a.id %}">{{a.nombre}} {{a.apellido}}</a>
+			<a href="{% url 'detailAutor' a.id %}">{{a.nombre}} {{a.apellido}}</a>
 		</li>
 	{% endfor %}
 	</ul>

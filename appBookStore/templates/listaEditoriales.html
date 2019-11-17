@@ -8,11 +8,11 @@
 	<ul>
 	{% for e in listaEditoriales %}
 		<li>
-			<a href="{% url 'detailEditoriales' e.id %}">{{e.nombre}}</a>
+			<a href="{% url 'detailEditorial' e.id %}">{{e.nombre}}</a>
 		</li>
 	{% endfor %}
 	</ul>
 {% else %}
-<p>No hay ninguna editorial en la tienda.</p>
+<p>No hay ninguna editorial registrada en la tienda.</p>
 {% endif %}
 {% endblock %}

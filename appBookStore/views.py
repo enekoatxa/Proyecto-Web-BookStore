@@ -10,7 +10,7 @@ def index(request):
 	editoriales = get_list_or_404(Editorial.objects.order_by('nombre'))
 	autores = get_list_or_404(Autor.objects.order_by('nombre'))
 	context = {'libros': libros, 'editoriales': editoriales, 'autores': autores}
-	return render(request, 'index.html', context)
+	return render(request, 'base.html', context)
 
 #devuelve los datos de un departamento
 def listaLibros(request):

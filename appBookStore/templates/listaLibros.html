@@ -8,7 +8,7 @@
 	<ul>
 	{% for l in listaLibros %}
 		<li>
-			<a href="{% url 'detailLibros' l.id %}">{{l.titulo}}</a>
+			<a href="{% url 'detailLibro' l.id %}">{{l.titulo}}</a>
 		</li>
 	{% endfor %}
 	</ul>
