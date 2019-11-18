@@ -7,14 +7,9 @@
 
 {% if libro %}
     <ul>
-        {% load static %}
+     
         <li>
-          {% with 'img/'|add:libro.portada.name as image_path %}
-          <img alt="{{ libro.foto.name }}" src="{% static image_path %}" height="300" width="200" /></a></th>
-        {% endwith %}  
-        </li>
-        <li>
-           Titulo: {{ libro.nombre}}
+           Titulo: {{ libro.titulo}}
         </li>
         <li>
            Genero: {{ libro.genero}} 
@@ -32,9 +27,24 @@
            Numero de paginas: {{ libro.num_paginas}}
          </li>
          <li>
-           Editorial: {{ libro.editorial}}
+           Editorial: {{ libro.cod_editorial}}
          </li>
-         <!-- Igual gaizki dao editoriala, baino ondo behar luke, toStr funtzioak ondo funtzionatzen badu -->
+         <li>
+           Autores: 
+              <ul>
+              {% for a in libro.autores.all %}
+              <li>
+                 {{a.nombre}} {{a.apellido}}
+              </li>
+              {% endfor %}
+              </ul>
+         </li>
+           {% load static %}
+        <li>
+          {% with ''|add:libro.portada.name as image_path %}
+          <img alt="{{ libro.portada.name }}" src="{% static image_path %}" height="300" width="200" /></a></th>
+        {% endwith %}  
+        </li>
         <!-- faltan: la imagen de la portada,la editorial y los autores -->
         
     </ul>

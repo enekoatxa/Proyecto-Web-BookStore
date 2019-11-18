@@ -4,11 +4,11 @@
 
 {% block contenido %}
 <h2>Listado de editoriales</h2>
-{% if listaEditoriales %}
+{% if editoriales %}
 	<ul>
-	{% for e in listaEditoriales %}
+	{% for e in editoriales %}
 		<li>
-			<a href="{% url 'detailEditorial' e.id %}">{{e.nombre}}</a>
+			<a href="{% url 'detailEditoriales' e.id %}">{{e.nombre}}</a>
 			<!--hemen sartu berko genuke la foto no? y para ello tendríamos que entrar en la lista
 				de libros,...-->
 		</li>

@@ -5,12 +5,18 @@ from .models import Libro, Editorial, Autor
 
 #devuelve la portada de bookStore
 def index(request):
-	# libros = get_list_or_404(Libro.objects.order_by('anyo').groupBy(editorial))
-	libros = Libro.objects.raw('SELECT * FROM libros ORDER BY anyo GROUP BY editorial')
+	libros = get_list_or_404(Libro.objects.order_by('anyo'))
 	editoriales = get_list_or_404(Editorial.objects.order_by('nombre'))
+	ultimosLibros = [len(editoriales)]
+	for e in editoriales:
+		for l in libros:
+			if l.cod_editorial == e.id:
+				ultimosLibros.add(l)
+			break;
+
 	autores = get_list_or_404(Autor.objects.order_by('nombre'))
-	context = {'libros': libros, 'editoriales': editoriales, 'autores': autores}
-	return render(request, 'base.html', context)
+	context = {'libros': ultimosLibros, 'editoriales': editoriales, 'autores': autores}
+	return render(request, 'index.html', context)
 
 #devuelve los datos de un departamento
 def listaLibros(request):
@@ -33,17 +39,17 @@ def detailLibro(request, libro_id):
 	libro = get_object_or_404(Libro, pk=libro_id)
 	autores = libro.autores.all()
 	context = {'libro': libro, 'autores': autores}
-	return render(request, 'detailLibro', context)
+	return render(request, 'detailLibro.html', context)
 
 #devuelve los empelados de un departamento
 def detailAutor(request, autor_id):
 	autor = get_object_or_404(Autor, pk=autor_id)
 	context = {'autor': autor}
-	return render(request, 'detailAutor', context)
+	return render(request, 'detailAutor.html', context)
 
 	#devuelve los empelados de un departamento
 def detailEditorial(request, editorial_id):
 	editorial = get_object_or_404(Editorial, pk=editorial_id)
 	context = {'editorial': editorial}
-	return render(request, 'detailEditorial', context)
+	return render(request, 'detailEditorial.html', context)
 	

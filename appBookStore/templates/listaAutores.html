@@ -4,11 +4,11 @@
 
 {% block contenido %}
 <h2>Listado de autores</h2>
-{% if listaAutores %}
+{% if autores %}
 	<ul>
-	{% for a in listaAutores %}
+	{% for a in autores %}
 		<li>
-			<a href="{% url 'detailAutor' a.id %}">{{a.nombre}} {{a.apellido}}</a>
+			<a href="{% url 'detailAutores' a.id %}">{{a.nombre}} {{a.apellido}}</a>
 		</li>
 	{% endfor %}
 	</ul>
