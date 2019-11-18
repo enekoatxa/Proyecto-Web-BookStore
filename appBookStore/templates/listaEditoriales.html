@@ -9,6 +9,8 @@
 	{% for e in listaEditoriales %}
 		<li>
 			<a href="{% url 'detailEditorial' e.id %}">{{e.nombre}}</a>
+			<!--hemen sartu berko genuke la foto no? y para ello tendríamos que entrar en la lista
+				de libros,...-->
 		</li>
 	{% endfor %}
 	</ul>
