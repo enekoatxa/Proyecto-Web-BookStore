@@ -13,8 +13,11 @@
         <li>
            Fecha nacimiento: {{ autor.fecha_nacimiento}} 
         </li>
-        
-        <!-- falta: la imagen-->
+        {% load static %}
+        {% with ''|add:autor.foto.name as image_path %}
+          <img alt="{{ autor.foto.name }}" src="{% static image_path %}" height="400" /></a></th>
+        {% endwith %}  
+       
 
     </ul>
 {% else %}

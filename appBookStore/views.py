@@ -5,17 +5,17 @@ from .models import Libro, Editorial, Autor
 
 #devuelve la portada de bookStore
 def index(request):
-	libros = get_list_or_404(Libro.objects.order_by('anyo'))
+	libros = get_list_or_404(Libro.objects.order_by('-anyo'))
 	editoriales = get_list_or_404(Editorial.objects.order_by('nombre'))
-	ultimosLibros = [len(editoriales)]
+	ultimosLibros = []
 	for e in editoriales:
 		for l in libros:
-			if l.cod_editorial == e.id:
-				ultimosLibros.add(l)
-			break;
+			if l.cod_editorial.id == e.id:
+				ultimosLibros.append(l)
+				break;
 
 	autores = get_list_or_404(Autor.objects.order_by('nombre'))
-	context = {'libros': ultimosLibros, 'editoriales': editoriales, 'autores': autores}
+	context = {'ultimosLibros': ultimosLibros, 'editoriales': editoriales, 'autores': autores}
 	return render(request, 'index.html', context)
 
 #devuelve los datos de un departamento

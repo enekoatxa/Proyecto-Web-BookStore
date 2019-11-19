@@ -34,7 +34,7 @@
               <ul>
               {% for a in libro.autores.all %}
               <li>
-                 {{a.nombre}} {{a.apellido}}
+                 <a href="{% url 'detailAutores' a.id %}">{{a.nombre}} {{a.apellido}}</a>
               </li>
               {% endfor %}
               </ul>
@@ -42,7 +42,7 @@
            {% load static %}
         <li>
           {% with ''|add:libro.portada.name as image_path %}
-          <img alt="{{ libro.portada.name }}" src="{% static image_path %}" height="300" width="200" /></a></th>
+          <img alt="{{ libro.portada.name }}" src="{% static image_path %}" height="300"/></a></th>
         {% endwith %}  
         </li>
         <!-- faltan: la imagen de la portada,la editorial y los autores -->
