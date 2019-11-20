@@ -10,8 +10,8 @@
         <div class="text-box pure-u-1">
             <div class="l-box">
                 <h1 class="text-box-head">B O O K S T O R E</h1>
-                <p class="text-box-subhead">Bienvenida a la página principal de la librería Dorronsoro-Atxa</p>
-                <p class="text-box-subhead">En esta página encontrarás los libros mas interesantes y novedosos</p>
+               <!-- <p class="text-box-subhead">Bienvenida</p>
+                <p class="text-box-subhead">En esta página encontrarás los libros mas interesantes y novedosos</p> -->
             </div>
         </div>
 
@@ -36,14 +36,20 @@
 {% endblock %}
 {% block footer %}
 
-<h2>Creating a Photo Gallery Layout</h2>
-
-                <p>
-                    This page shows how to make a photo gallery using <a href="">Pure Grids</a>. Using Pure, we can create interesting layouts such as this photo gallery. This layout is fully responsive. We've added a bit of custom media queries on top of the responsive grid provided by Pure.
-                </p>
-
-                <p>
-                    We've also taken advantage of <a href="">Pure Forms</a> and <a href="">Pure Menus</a>. This example uses a form with the <code>pure-form</code> class name to create an inline form. We use <a href="">Pure Buttons</a> for the button styling.
-                </p>
+<h2>Búsqueda por autor: </h2>
+{% if autores %}
+ {% load static %}
+   
+    {% for a in autores %}
+        <span>
+            {% with ''|add:a.foto.name as image_path %}
+          <a href="{% url 'detailAutores' a.id %}"><img alt="{{ a.foto.name }}" src="{% static image_path %}" height="100" /></a></th>
+        {% endwith %} 
+        </span>
+    {% endfor %}
+  
+{% else %}
+<p>No hay ningun autor en la tienda.</p>
+{% endif %}
 
 {% endblock %}
