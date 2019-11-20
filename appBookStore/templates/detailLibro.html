@@ -42,7 +42,7 @@
            {% load static %}
         <li>
           {% with ''|add:libro.portada.name as image_path %}
-          <img alt="{{ libro.portada.name }}" src="{% static image_path %}" height="300"/></a></th>
+          <img alt="{{ libro.portada.name }}" src="{% static image_path %}" height="300"/>
         {% endwith %}  
         </li>
         <!-- faltan: la imagen de la portada,la editorial y los autores -->

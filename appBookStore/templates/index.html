@@ -20,7 +20,7 @@
         <div class="photo-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3 correccionFoto">
         	{% load static %}
             {% with ''|add:l.portada.name as image_path %}
-         	<a href="{% url 'detailLibros' l.id %}"><img alt="{{ l.portada.name }}" src="{% static image_path %}"/></a></th></a>
+         	<a href="{% url 'detailLibros' l.id %}"><img alt="{{ l.portada.name }}" src="{% static image_path %}"/></a>
         	{% endwith %}  
 
             <aside class="photo-box-caption">
@@ -43,7 +43,7 @@
     {% for a in autores %}
         <span>
             {% with ''|add:a.foto.name as image_path %}
-          <a href="{% url 'detailAutores' a.id %}"><img alt="{{ a.foto.name }}" src="{% static image_path %}" height="100" /></a></th>
+          <a href="{% url 'detailAutores' a.id %}"><img alt="{{ a.foto.name }}" src="{% static image_path %}" height="100" /></a>
         {% endwith %} 
         </span>
     {% endfor %}
