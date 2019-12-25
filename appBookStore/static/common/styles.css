@@ -2401,7 +2401,18 @@ footer i{ font-size: 1.4em; }
 	.plr-xs-70{ padding-left: 70px!important; padding-right: 70px!important; }
 	.plr-xs-80{ padding-left: 80px!important; padding-right: 80px!important; }
 	.plr-xs-90{ padding-left: 90px!important; padding-right: 90px!important; }
-	
+
+}
+ul.a{
+    margin-left: 5%;
+     list-style-type: circle;
+     padding: 20px;
+
+}
+h2,p
+{
+     margin-left: 7%;
+     margin-right: 7%;
 }
 
 

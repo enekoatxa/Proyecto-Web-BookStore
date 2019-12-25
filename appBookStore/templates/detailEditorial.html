@@ -1,6 +1,32 @@
 {% extends 'base.html' %}
 
-{% block titulo %} Tipos de articulos {% endblock %}
+{% block titulo %}  
+<a class="logo" href="">D A !</a>
+        
+        
+        
+        <a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>
+        
+        <ul class="main-menu" id="main-menu">
+            <li><a href="">Inicio</a></li>
+            <li><a href="/libros">Libros</a></li>
+            <li><a href="/autores">Autores</a></li>
+            <li class="drop-down"><a href="/editoriales">Editoriales<i class="ion-arrow-down-b"></i></a>
+                <ul class="drop-down-menu drop-down-inner">
+                    
+                    {% for e in editoriales %}
+                    <li>
+                        <a href="{% url 'detailEditoriales' e.id %}">{{e.nombre}}</a>
+                     </li>
+                     {% endfor %}
+                </ul>
+            </li>
+            
+            
+        </ul>
+        
+        <div class="clearfix"></div>
+        {% endblock %}
 
 {% block contenido %}
 <h2>Datos de la editorial: </h2>
