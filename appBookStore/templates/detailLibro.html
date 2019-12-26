@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
 {% block titulo %}  
-<a class="logo" href="">D A !</a>
+<a class="logo" href="/">D A !</a>
         
         
         
         <a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>
         
         <ul class="main-menu" id="main-menu">
-            <li><a href="">Inicio</a></li>
+            <li><a href="/">Inicio</a></li>
             <li><a href="/libros">Libros</a></li>
             <li><a href="/autores">Autores</a></li>
             <li class="drop-down"><a href="/editoriales">Editoriales<i class="ion-arrow-down-b"></i></a>
@@ -34,26 +34,74 @@
 <h2>Datos del libro: </h2>
 
 {% if libro %}
-<div lista> 
+
+<table>
+  <tr>
+    <th>
+      
+      <table>
+      <tr>
+        <td>Título: {{ libro.titulo}}</td>
+      </tr>
+      <tr>
+        <td>Género: {{ libro.genero}}</td>
+      </tr>
+      <tr>
+        <td>Idioma: {{ libro.idioma}}</td>
+      </tr>
+      <tr>
+        <td>Edición: {{ libro.edicion}}</td>
+      </tr>
+      <tr>
+        <td>Año: {{ libro.anyo}}</td>
+      </tr>
+      <tr>
+        <td>Número de páginas: {{ libro.num_paginas}}</td>
+      </tr>
+      <tr>
+        <td>Editorial: {{ libro.cod_editorial}}</td>
+      </tr>
+      <tr>
+        <td>
+          Autores:
+          <table>
+              {% for a in libro.autores.all %}
+              <tr><td>
+                <a href="{% url 'detailAutores' a.id %}">{{a.nombre}} {{a.apellido}}</a>
+              </td></tr>
+              {% endfor %}
+          </table>
+        </td>
+      </tr>
+    </table>
+    </th>
+    <th>
+      {% load static %}
+          {% with ''|add:libro.portada.name as image_path %}
+          <img class="portada" alt="{{ libro.portada.name }}" src="{% static image_path %}" height="400"/>
+        {% endwith %}   
+    </th>
+  </tr>
+</table>
+<!--<div lista> 
     <ul>
-     
         <li>
-           Titulo: {{ libro.titulo}}
+           Título: {{ libro.titulo}}
         </li>
         <li>
-           Genero: {{ libro.genero}} 
+           Género: {{ libro.genero}} 
         </li>
         <li>
            Idioma: {{ libro.idioma}}
         </li>
         <li>
-           Edicion: {{ libro.edicion}}
+           Edición: {{ libro.edicion}}
         </li>
         <li>
-           Anyo: {{ libro.anyo}}
+           Año: {{ libro.anyo}}
          </li>
          <li>
-           Numero de paginas: {{ libro.num_paginas}}
+           Número de páginas: {{ libro.num_paginas}}
          </li>
          <li>
            Editorial: {{ libro.cod_editorial}}
@@ -71,15 +119,14 @@
            {% load static %}
         <li>
           {% with ''|add:libro.portada.name as image_path %}
-          <img alt="{{ libro.portada.name }}" src="{% static image_path %}" height="300"/>
+          <img alt="{{ libro.portada.name }}" src="{% static image_path %}" height="400"/>
         {% endwith %}  
-        </li>
+        </li> -->
+
         <!-- faltan: la imagen de la portada,la editorial y los autores -->
-        
-    </ul>
     </div>
 {% else %}
-    <p>No existe este articulo.</p>
+    <p>No existe este artículo.</p>
 {% endif %}
 
 {% endblock %}

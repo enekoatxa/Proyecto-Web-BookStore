@@ -1,14 +1,12 @@
 {% extends 'base.html' %}
 
 {% block titulo %}  
-<a class="logo" href="">D A !</a>
-        
-        
-        
+<a class="logo" href="/">D A !</a>
+
         <a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>
         
         <ul class="main-menu" id="main-menu">
-            <li><a href="">Inicio</a></li>
+            <li><a href="/">Inicio</a></li>
             <li><a href="/libros">Libros</a></li>
             <li><a href="/autores">Autores</a></li>
             <li class="drop-down"><a href="/editoriales">Editoriales<i class="ion-arrow-down-b"></i></a>
@@ -32,21 +30,40 @@
 <h2>Datos del autor: </h2>
 
 {% if autor %}
-    <ul>
-        <li>
-           Nombre: {{ autor.nombre}} {{ autor.apellido}}
-        </li>
-        <li>
-           Fecha nacimiento: {{ autor.fecha_nacimiento}} 
-        </li>
-    </ul>
-        {% load static %}
-        {% with ''|add:autor.foto.name as image_path %}
-          <img alt="{{ autor.foto.name }}" src="{% static image_path %}" height="400" />
-        {% endwith %}  
 
+<table>
+  <tr>
+    <th>
+      
+      <table>
+      <tr>
+        <td>Nombre: {{ autor.nombre}} {{ autor.apellido}}</td>
+      </tr>
+      <tr>
+        <td>Fecha nacimiento: {{ autor.fecha_nacimiento}}</td>
+      </tr>
+      <tr>
+      <td>De {{autor.nombre}} {{ autor.apellido}}, tenemos estos libros:</td>
+      </tr>
+    {% for l in librosDeAutor %}
+    <tr>
+        <td><a href="{% url 'detailLibros' l.id %}">{{l.titulo}}</a></td>
+    </tr>
+    {% endfor %}
+    </table>
+    </th>
+    <th>
+        {% load static %}
+        <li>
+        {% with ''|add:autor.foto.name as image_path %}
+          <img class="autor" alt="{{ autor.foto.name }}" src="{% static image_path %}" height="400"/>
+        {% endwith %}
+        </li>
+    </th>
+  </tr>
+</table>
 {% else %}
-    <p>No existe ningún autor.</p>
+    <p>No existe este autor.</p>
 {% endif %}
 
 {% endblock %}

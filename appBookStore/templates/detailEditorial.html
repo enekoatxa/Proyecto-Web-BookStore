@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
 {% block titulo %}  
-<a class="logo" href="">D A !</a>
+<a class="logo" href="/">D A !</a>
         
         
         
         <a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>
         
         <ul class="main-menu" id="main-menu">
-            <li><a href="">Inicio</a></li>
+            <li><a href="/">Inicio</a></li>
             <li><a href="/libros">Libros</a></li>
             <li><a href="/autores">Autores</a></li>
             <li class="drop-down"><a href="/editoriales">Editoriales<i class="ion-arrow-down-b"></i></a>
@@ -30,15 +30,21 @@
 
 {% block contenido %}
 <h2>Datos de la editorial: </h2>
-
+<br></br>
 {% if editorial %}
-    <ul>
-         <li>
-           Nombre de la editorial: {{ editorial.nombre}}
-         </li>
-        
-
-    </ul>
+<table>
+    <tr>
+        <td>Nombre de la editorial: {{ editorial.nombre}}</td>
+    </tr>
+    <tr>
+        <td>Estos son todos los libros que tenemos de la editorial {{ editorial.nombre}}</td>
+    </tr>
+    {% for l in librosDeEditorial %}
+    <tr>
+        <td><h3><a href="{% url 'detailLibros' l.id %}">{{l.titulo}}</a></h3></td>
+    </tr>
+    {% endfor %}
+</table>
 {% else %}
     <p>No existe este articulo.</p>
 {% endif %}

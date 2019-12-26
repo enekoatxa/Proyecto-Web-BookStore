@@ -21,7 +21,7 @@ def index(request):
 
 #devuelve los datos de un departamento
 def listaLibros(request):
-	libros = get_list_or_404(Libro.objects.order_by('anyo'))
+	libros = get_list_or_404(Libro.objects.order_by('-anyo'))
 	context = {'libros': libros}
 	return render(request, 'listaLibros.html', context)
 
@@ -45,12 +45,23 @@ def detailLibro(request, libro_id):
 #devuelve los empelados de un departamento
 def detailAutor(request, autor_id):
 	autor = get_object_or_404(Autor, pk=autor_id)
-	context = {'autor': autor}
+	libros = get_list_or_404(Libro.objects.order_by('-anyo'))
+	librosDeAutor = []
+	for l in libros:
+		for a in l.autores.all():
+			if a.id == autor_id:
+				librosDeAutor.append(l)
+	context = {'autor': autor, 'librosDeAutor': librosDeAutor}
 	return render(request, 'detailAutor.html', context)
 
 	#devuelve los empelados de un departamento
 def detailEditorial(request, editorial_id):
 	editorial = get_object_or_404(Editorial, pk=editorial_id)
-	context = {'editorial': editorial}
+	libros = get_list_or_404(Libro.objects.order_by('-anyo'))
+	librosDeEditorial = []
+	for l in libros:
+		if l.cod_editorial.id == editorial_id:
+			librosDeEditorial.append(l)
+	context = {'editorial': editorial, 'librosDeEditorial': librosDeEditorial}
 	return render(request, 'detailEditorial.html', context)
 	

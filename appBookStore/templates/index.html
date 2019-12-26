@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block titulo %}   
-<a class="logo" href="">D A !</a>
+<a class="logo" href="/">D A !</a>
         
         <div class="right-area">
             <form class="src-form">
@@ -14,7 +14,7 @@
         <a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>
         
         <ul class="main-menu" id="main-menu">
-            <li><a href="">Inicio</a></li>
+            <li><a href="/">Inicio</a></li>
             <li><a href="/libros">Libros</a></li>
             <li><a href="/autores">Autores</a></li>
             <li class="drop-down"><a href="/editoriales">Editoriales<i class="ion-arrow-down-b"></i></a>
@@ -69,16 +69,14 @@
                                     <div class="swiper-wrapper">
                                      {% for l in ultimosLibros %}
                                         <div class="swiper-slide">
-                                            <div class="bg-white">
-                                                                                                
+                                            <div class="bg-white">                                           
                                                 <div class="plr-25 ptb-15">
                                                     <h4 class="mtb-10">
                                                         <a href="{% url 'detailLibros' l.id %}">{{l.titulo}}</a></h4>
                                                         {% load static %}
-                                                {% with ''|add:l.portada.name as image_path %}
-                                                  <a href="{% url 'detailLibros' l.id %}"><img alt="{{ l.portada.name }}" src="{% static image_path %}"/></a>
-                                                {% endwith %}  
-                                                    
+                                                          {% with ''|add:l.portada.name as image_path %}
+                                                          <a href="{% url 'detailLibros' l.id %}"><img class="portada" alt="{{ l.portada.name }}" src="{% static image_path %}"/></a>
+                                                        {% endwith %}  
                                                 </div><!-- hot-news -->
                                             </div><!-- hot-news -->
                                         </div><!-- swiper-slide -->
@@ -97,6 +95,16 @@
         </div><!-- container -->
 
 {% endblock %}
+
+{% block TituloBarraDcha %}
+Búsqueda de autores
+{% endblock %}
+{% block ListaBarraDcha %}
+{% for a in autores %}
+    <h5 class="pt-5"><a href="{% url 'detailAutores' a.id %}"><b>{{a.nombre}} {{a.apellido}}</b></a></h5>
+    {% endfor %}
+{% endblock %}
+
 {% block footer %}
 
 <h2>Búsqueda por autor: </h2>

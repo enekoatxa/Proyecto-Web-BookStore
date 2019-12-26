@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
 {% block titulo %}  
-<a class="logo" href="">D A !</a>
+<a class="logo" href="/">D A !</a>
         
         
         
         <a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>
         
         <ul class="main-menu" id="main-menu">
-            <li><a href="">Inicio</a></li>
+            <li><a href="/">Inicio</a></li>
             <li><a href="/libros">Libros</a></li>
             <li><a href="/autores">Autores</a></li>
             <li class="drop-down"><a href="/editoriales">Editoriales<i class="ion-arrow-down-b"></i></a>
@@ -30,14 +30,18 @@
 
 {% block contenido %}
 <h2>Listado de libros</h2>
+<p><br></p>
+<p>En esta pestaña puedes ver la lista de todos los libros que tenemos actualmente. ¡Están ordenados para que te aparezcan las últimas llegadas primero!</p>
+<p>Haz click en cualquier libro para ver sus detalles.</p>
+<p><br></p>
 {% if libros %}
-	<ul>
-	{% for l in libros %}
-		<li>
-			<a href="{% url 'detailLibros' l.id %}">{{l.titulo}}</a>
-		</li>
-	{% endfor %}
-	</ul>
+    <table>
+        {% for l in libros %}
+        <tr>
+            <td><h3><a href="{% url 'detailLibros' l.id %}">{{l.titulo}}</a></h3></td>
+        </tr>
+        {% endfor %}
+    </table>
 {% else %}
 <p>No hay ningun libro en la tienda. ¡Atentos a nuevas llegadas!</p>
 {% endif %}
