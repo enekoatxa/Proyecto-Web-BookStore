@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load i18n %}
 {% block titulo %}   
 <a class="logo" href="">D A !</a>
         
@@ -7,6 +7,7 @@
             <form class="src-form">
                 <button type="submit"><i class="ion-search"></i></a></button>
                 <input type="text" placeholder="Search here">
+               
             </form><!-- src-form -->
         </div><!-- right-area -->
         
@@ -44,7 +45,7 @@
                     <div class="dplay-tbl">
                         <div class="dplay-tbl-cell color-white mtb-30">
                             <div class="mx-w-400x">
-                                <h1 class="mt-20 mb-30"><b>LIBRERIA ATXA DORRONSORO</b></h1>
+                                <h1 class="mt-20 mb-30"><b>{% trans "LIBRERÍA ATXA DORRONSORO"%}</b></h1>
                             </div><!-- mx-w-200x -->
                         </div><!-- dplay-tbl-cell -->
                     </div><!-- dplay-tbl -->

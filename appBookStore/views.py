@@ -1,6 +1,7 @@
 from django.http import HttpResponse, Http404
 from django.shortcuts import get_object_or_404, get_list_or_404, render
 from .models import Libro, Editorial, Autor
+from django.views.generic import TemplateView
 
 
 #devuelve la portada de bookStore

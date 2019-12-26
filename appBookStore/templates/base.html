@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html lang="en">
+{% load i18n %}
 <head>
     <title>LIBRERIA DORRONSORO ATXA</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +19,33 @@
     <link href="{% static 'fonts/ionicons.css' %}" rel="stylesheet">
     <link href="{% static 'common/styles.css' %}" rel="stylesheet">
     
-    
+    <form action= "{% url 'set_language' %}" method="post"> {% csrf_token %}
+
+        <input name="next" type="hidden" value= "{{redirect_to }}" />
+
+        <select name = "language">
+
+            {% get_current_language as LANGUAGE_CODE %}
+
+            {% get_available_languages as LANGUAGES %}
+
+            {% get_language_info_list for LANGUAGES as languages%}
+
+            {% for language in languages%}
+
+                <option value="{{language.code}}" {% if language.code == LANGUAGE_CODE %} selected {%endif%}>
+
+                    {{ language.name_local }} ({{ language.code }})
+
+                </option>
+
+            {% endfor%}
+
+        </select>
+
+        <input type="submit" value="Change" />
+
+    </form>
     
 
 </head>
@@ -109,7 +136,7 @@
                                                 
                                                     <h5 class="color-ash"><b>ART</b></h5>
                                                     <h2 class="mtb-10"><a href="#">
-                                                        <b>As an Alchoholic, Your Company "Parks" are Killing me</b></a></h2>
+                                                        <b>{% trans"As an Alchoholic, Your Company "Parks" are Killing me"% }</b></a></h2> 
                                                     <ul class="list-li-mr-10 color-lt-black">
                                                         <li><i class="mr-5 font-12 ion-android-favorite-outline"></i>15</li>
                                                         <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i>105</li>
