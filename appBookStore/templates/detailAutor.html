@@ -34,22 +34,26 @@
 <table>
   <tr>
     <th>
-      
       <table>
       <tr>
-        <td>Nombre: {{ autor.nombre}} {{ autor.apellido}}</td>
+        <td> Nombre: {{ autor.nombre}} {{ autor.apellido}}</td>
       </tr>
       <tr>
         <td>Fecha nacimiento: {{ autor.fecha_nacimiento}}</td>
       </tr>
-      <tr>
-      <td>De {{autor.nombre}} {{ autor.apellido}}, tenemos estos libros:</td>
-      </tr>
-    {% for l in librosDeAutor %}
-    <tr>
-        <td><a href="{% url 'detailLibros' l.id %}">{{l.titulo}}</a></td>
-    </tr>
-    {% endfor %}
+
+      <tr><td><button id="btnLibros">Libros de {{autor.nombre}} {{ autor.apellido}}</button></td></tr>
+        <tr><td>
+            <div class="tablaLibros">
+            <table id="tablaLibros">
+            {% for l in librosDeAutor %}
+            <tr>
+            <td><a href="{% url 'detailLibros' l.id %}">{{l.titulo}}</a></td>
+            </tr>
+            {% endfor %}
+            </table>
+        </div>
+        </td></tr>
     </table>
     </th>
     <th>
@@ -67,3 +71,4 @@
 {% endif %}
 
 {% endblock %}
+      

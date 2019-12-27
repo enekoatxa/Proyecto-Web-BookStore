@@ -78,8 +78,9 @@
     <th>
       {% load static %}
           {% with ''|add:libro.portada.name as image_path %}
-          <img class="portada" alt="{{ libro.portada.name }}" src="{% static image_path %}" height="400"/>
+          <img class="portada" id="portadaLibro" alt="{{ libro.portada.name }}" src="{% static image_path %}" height="400"/>
         {% endwith %}   
+    <tr><p>Puedes hacer zoom en la portada, arrastrando el cursor por encima de ella</p></tr>
     </th>
   </tr>
 </table>
