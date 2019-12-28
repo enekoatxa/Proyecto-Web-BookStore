@@ -19,7 +19,9 @@ from django.conf.urls import url
 
 
 urlpatterns = [
+    url(r'^i18n/', include('django.conf.urls.i18n')),
 	path('', include('appBookStore.urls')),
     path('admin/', admin.site.urls),
-    url(r'^i18n/', include('django.conf.urls.i18n')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    
 ]

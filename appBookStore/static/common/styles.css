@@ -633,7 +633,7 @@ header .main-menu li.drop-down a.mouseover + ul.drop-down-menu{ display: block;
 .sided-80x{ position: relative; }
 .sided-80x .s-left{ position: absolute; top: 0; left: 0; height: 80px; width: 80px; }
 .sided-80x .s-left.rounded img{ border-radius: 80px; overflow: hidden; }
-.sided-80x .s-right{ margin-left: 95px; min-height: 80px; }
+.sided-80x .s-right{ margin-left: 30px; min-height: 80px; }
 
 
 .sided-70x{ position: relative; }
@@ -846,7 +846,7 @@ footer i{ font-size: 1.4em; }
 
 .mx-w-400x{ max-width: 400px!important; }
 .mx-w-300x{ max-width: 300px!important; }
-.mx-w-200x{ max-width: 200px!important; }
+.mx-w-200x{ max-width: 500px!important; }
 
 
 
@@ -2441,4 +2441,12 @@ th, td
 {
 	height: 400px;
 	width: auto;
+}
+.login
+{
+	width: 20%;
+}
+.logout
+{
+	margin-left:5%; 
 }
