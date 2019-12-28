@@ -65,3 +65,8 @@ def detailEditorial(request, editorial_id):
 	context = {'editorial': editorial, 'librosDeEditorial': librosDeEditorial}
 	return render(request, 'detailEditorial.html', context)
 	
+# Devuelve la info de un libro
+def ajax(request, libro_id):
+    libro = get_object_or_404(Libro, pk=libro_id)
+    context = { 'libro': libro }
+    return render(request, 'ajax.html', context)

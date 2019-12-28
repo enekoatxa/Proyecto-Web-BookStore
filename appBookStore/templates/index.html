@@ -105,7 +105,7 @@
                                                         <a href="{% url 'detailLibros' l.id %}">{{l.titulo}}</a></h4>
                                                         {% load static %}
                                                           {% with ''|add:l.portada.name as image_path %}
-                                                          <a href="{% url 'detailLibros' l.id %}"><img class="portada" alt="{{ l.portada.name }}" src="{% static image_path %}"/></a>
+                                                          <a class="contenidoAjax" href="{% url 'detailLibros' l.id %}"><img class="portada" alt="{{ l.portada.name }}" src="{% static image_path %}"/></a>
                                                         {% endwith %}  
                                                 </div><!-- hot-news -->
                                             </div><!-- hot-news -->
