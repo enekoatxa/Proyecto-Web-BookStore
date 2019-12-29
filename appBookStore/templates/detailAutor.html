@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
-{% block titulo %}  
+{% block titulo %}
+{% load i18n %}  
 <a class="logo" href="/">D A !</a>
 
         <a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>
@@ -8,8 +9,8 @@
         <ul class="main-menu" id="main-menu">
             <li><a href="/">{% trans "Inicio" %}</a></li>
             <li><a href="/libros">{% trans "Libros" %}</a></li>
-            <li><a href="/autores">{% trans "Autores %}</a></li>
-            <li class="drop-down"><a href="/editoriales">{% trans "Editoriales %}<i class="ion-arrow-down-b"></i></a>
+            <li><a href="/autores">{% trans "Autores" %}</a></li>
+            <li class="drop-down"><a href="/editoriales">{% trans "Editoriales" %}<i class="ion-arrow-down-b"></i></a>
                 <ul class="drop-down-menu drop-down-inner">
                     
                     {% for e in editoriales %}
@@ -27,6 +28,7 @@
         {% endblock %}
 
 {% block contenido %}
+{% load i18n %}
 <h2>{% trans "Datos del autor" %}</h2>
 
 {% if autor %}
@@ -36,7 +38,7 @@
     <th>
       <table>
       <tr>
-        <td> {% trans "Nombre:"}" {{ autor.nombre}} {{ autor.apellido}}</td>
+        <td> {% trans "Nombre:" %} {{ autor.nombre}} {{ autor.apellido}}</td>
       </tr>
       <tr>
         <td> {% trans "Fecha de nacimiento:" %} {{ autor.fecha_nacimiento}}</td>
@@ -67,6 +69,7 @@
   </tr>
 </table>
 {% else %}
+{% load i18n %}
     <p>{% trans "No existe este autor" %}</p>
 {% endif %}
 

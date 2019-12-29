@@ -1,4 +1,5 @@
 {% if libro %}
+{% load i18n %}
     <p>{{libro.titulo}}</p>
     <p>{{libro.num_paginas}} {% trans "páginas" %}</p>
     <p>{% trans "Año:" %}" {{libro.anyo}}</p>

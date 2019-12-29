@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
-{% block titulo %}  
+{% block titulo %}
+{% load i18n %}  
 <a class="logo" href="/">D A !</a>
         
         
@@ -29,6 +30,7 @@
         {% endblock %}
 
 {% block contenido %}
+{% load i18n %}
 <h2>{% trans "Datos de la editorial" %}</h2>
 <br></br>
 {% if editorial %}
@@ -37,7 +39,7 @@
         <td>{% trans "Nombre de la editorial:" %}" {{ editorial.nombre}}</td>
     </tr>
     <tr>
-        <td>{% trans "Estos son todos los libros que tenemos de la editorial: %} {{ editorial.nombre}}</td>
+        <td>{% trans "Estos son todos los libros que tenemos de la editorial:" %} {{ editorial.nombre}}</td>
     </tr>
     {% for l in librosDeEditorial %}
     <tr>

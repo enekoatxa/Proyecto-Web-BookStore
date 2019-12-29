@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
-{% block titulo %}  
+{% block titulo %}
+{% load i18n %}  
 <a class="logo" href="/">D A !</a>
         
         
@@ -28,6 +29,7 @@
 
 
 {% block contenido %}
+{% load i18n %}
 <h2>{% trans "Listado de editoriales" %}</h2>
 <p><br></p>
 <p>{% trans "En esta pestaña puedes ver todas las editoriales de los cuales tenemos libros en la tienda. Si haces click en alguno, podrás ver sus detalles" %}</p>

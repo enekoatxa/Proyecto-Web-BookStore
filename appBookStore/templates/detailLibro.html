@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block titulo %}  
+{% load i18n %}
 <a class="logo" href="/">D A !</a>
         
         
@@ -31,6 +32,7 @@
 
 
 {% block contenido %}
+{% load i18n %}
 <h2>{% trans "Datos del libro:" %}" </h2>
 
 {% if libro %}

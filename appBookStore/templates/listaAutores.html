@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
-{% block titulo %}  
+{% block titulo %}
+{% load i18n %}  
 <a class="logo" href="/">D A !</a>
         <a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>
         
@@ -24,6 +25,7 @@
 {% endblock %}
 
 {% block contenido %}
+{% load i18n %}
 <h2>{% trans "Listado de autores" %}</h2>
 <p><br></p>
 <p>{% trans "En esta pestaña podrás encontrar la lista de todos los autores de los cuales tenemos libros en la tienda. Puedes buscar cualquier información del autor pinchando en su nombre" %}</p>
