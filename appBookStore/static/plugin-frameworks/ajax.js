@@ -1,14 +1,13 @@
 $(document).ready(function() {
 
-  $('section.post > header.post-header > h2.post-title > a').each(function () {
+  $('#contenidoAjax').qtip(
+  {
     var href = $(this).attr("href");
-    href = href.replace("post", "postAjax");
-    $(this).qtip({
-       content: {
-          url: href,
-          method: 'get'
-       }
-    });
+    href = href.replace("libros", "ajax");
+    content: {
+      url: href,
+      method: 'get'
+   }
   });
 
 });

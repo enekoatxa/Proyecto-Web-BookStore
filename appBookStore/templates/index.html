@@ -29,9 +29,7 @@
 
     </form>
 
-
-
-<a class="logo" href="/">D A !</a>
+<a class="logo blanco" href="/">D A !</a>
         
         <div class="right-area">
             <form class="src-form">
@@ -44,10 +42,10 @@
         <a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>
         
         <ul class="main-menu" id="main-menu">
-            <li><a href="/">{% trans "Inicio"%}</a></li>
-            <li><a href="/libros">{% trans "Libros"%}</a></li>
-            <li><a href="/autores">{% trans "Autores"%}</a></li>
-            <li class="drop-down"><a href="/editoriales">{% trans "Editoriales"%}<i class="ion-arrow-down-b"></i></a>
+            <li><a class="blanco" href="/">{% trans "Inicio"%}</a></li>
+            <li><a class="blanco" href="/libros">{% trans "Libros"%}</a></li>
+            <li><a class="blanco" href="/autores">{% trans "Autores"%}</a></li>
+            <li class="drop-down"><a class="blanco" href="/editoriales">{% trans "Editoriales"%}<i class="ion-arrow-down-b"></i></a>
                 <ul class="drop-down-menu drop-down-inner">
                     
                     {% for e in editoriales %}
@@ -102,10 +100,10 @@
                                             <div class="bg-white">                                           
                                                 <div class="plr-25 ptb-15">
                                                     <h4 class="mtb-10">
-                                                        <a href="{% url 'detailLibros' l.id %}">{{l.titulo}}</a></h4>
+                                                        <a class="contenidoAjax" id="contenidoAjax" href="{% url 'detailLibros' l.id %}">{{l.titulo}}</a></h4>
                                                         {% load static %}
                                                           {% with ''|add:l.portada.name as image_path %}
-                                                          <a class="contenidoAjax" href="{% url 'detailLibros' l.id %}"><img class="portada" alt="{{ l.portada.name }}" src="{% static image_path %}"/></a>
+                                                          <a href="{% url 'detailLibros' l.id %}"><img class="portada" alt="{{ l.portada.name }}" src="{% static image_path %}"/></a>
                                                         {% endwith %}  
                                                 </div><!-- hot-news -->
                                             </div><!-- hot-news -->
@@ -175,7 +173,7 @@ Búsqueda de editoriales
                                             <div class="swiper-slide">
                                                 <div class="pos-relative">
                                                     {% with ''|add:a.foto.name as image_path %}
-                                                    <a href="{% url 'detailAutores' a.id %}"><img class="autorP" alt="{{ a.foto.name }}" src="{% static image_path %}" height="100"/> {{a.nombre}} {{a.apellido}} </a>
+                                                    <a class="blanco" href="{% url 'detailAutores' a.id %}"><img class="autorP" alt="{{ a.foto.name }}" src="{% static image_path %}" height="100"/> {{a.nombre}} {{a.apellido}} </a>
                                                     {% endwith %}
                                                 </div><!-- pos-relative -->
                                             </div><!-- swiper-slide --> 

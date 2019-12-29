@@ -18,13 +18,6 @@ $(document).ready(function() {
 	}, function (){
 		$("#portadaLibro").css("height",400);
 	});
-
-	$('#contenidoAjax').qtip(
- 	{
-    content: {
-      url: 'ajax.html'
-  	}
- 	});
 });
 
 
