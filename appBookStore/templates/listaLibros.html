@@ -8,10 +8,10 @@
         <a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>
         
         <ul class="main-menu" id="main-menu">
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/libros">Libros</a></li>
-            <li><a href="/autores">Autores</a></li>
-            <li class="drop-down"><a href="/editoriales">Editoriales<i class="ion-arrow-down-b"></i></a>
+            <li><a href="/">{% trans "Inicio" %}</a></li>
+            <li><a href="/libros">{% trans "Libros" %}</a></li>
+            <li><a href="/autores">{% trans "Autores" %}</a></li>
+            <li class="drop-down"><a href="/editoriales">{% trans "Editoriales" %}<i class="ion-arrow-down-b"></i></a>
                 <ul class="drop-down-menu drop-down-inner">
                     
                     {% for e in editoriales %}
@@ -29,10 +29,10 @@
         {% endblock %}
 
 {% block contenido %}
-<h2>Listado de libros</h2>
+<h2>{% trans "Listado de libros" %}</h2>
 <p><br></p>
-<p>En esta pestaña puedes ver la lista de todos los libros que tenemos actualmente. ¡Están ordenados para que te aparezcan las últimas llegadas primero!</p>
-<p>Haz click en cualquier libro para ver sus detalles.</p>
+<p>{% trans "En esta pestaña puedes ver la lista de todos los libros que tenemos actualmente. ¡Están ordenados para que te aparezcan las últimas llegadas primero!" %}</p>
+<p>{% trans "Haz click en cualquier libro para ver sus detalles" %}</p>
 <p><br></p>
 {% if libros %}
     <table>
@@ -43,7 +43,7 @@
         {% endfor %}
     </table>
 {% else %}
-<p>No hay ningun libro en la tienda. ¡Atentos a nuevas llegadas!</p>
+<p>{% trans "No hay ningun libro en la tienda. ¡Atentos a nuevas llegadas!" %}</p>
 {% endif %}
 {% endblock %}
 

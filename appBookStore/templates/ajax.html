@@ -1,8 +1,8 @@
 {% if libro %}
     <p>{{libro.titulo}}</p>
-    <p>{{libro.num_paginas}} páginas</p>
-    <p>Año {{libro.anyo}}</p>
-    <p>Editorial {{libro.cod_editorial}}</p>
+    <p>{{libro.num_paginas}} {% trans "páginas" %}</p>
+    <p>{% trans "Año:" %}" {{libro.anyo}}</p>
+    <p>{% trans "Editorial" %} {{libro.cod_editorial}}</p>
 {% else %}
-    <p>No tenemos información sobre este libro.</p>
+    <p>{% trans "No tenemos información sobre este libro" %}</p>
 {% endif %}

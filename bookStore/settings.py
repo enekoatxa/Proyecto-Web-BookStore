@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 from django.conf import global_settings
+from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -115,8 +116,9 @@ LANGUAGE_CODE = 'es'
 
 _ = lambda s: s
 LANGUAGES = (
-    ('en', _('Inglés')),
+    ('en', _('English')),
     ('es', _('Español')),
+    ('eu', _('Euskara')),
 )
 
 TIME_ZONE = 'UTC'

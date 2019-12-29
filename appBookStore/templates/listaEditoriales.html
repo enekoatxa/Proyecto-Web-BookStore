@@ -8,10 +8,10 @@
         <a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>
         
         <ul class="main-menu" id="main-menu">
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/libros">Libros</a></li>
-            <li><a href="/autores">Autores</a></li>
-            <li class="drop-down"><a href="/editoriales">Editoriales<i class="ion-arrow-down-b"></i></a>
+            <li><a href="/">{% trans "Inicio" %}</a></li>
+            <li><a href="/libros">{% trans "Libros" %}</a></li>
+            <li><a href="/autores">{% trans "Autores" %}</a></li>
+            <li class="drop-down"><a href="/editoriales">{% trans "Editoriales" %}<i class="ion-arrow-down-b"></i></a>
                 <ul class="drop-down-menu drop-down-inner">
                     
                     {% for e in editoriales %}
@@ -28,9 +28,9 @@
 
 
 {% block contenido %}
-<h2>Listado de editoriales</h2>
+<h2>{% trans "Listado de editoriales" %}</h2>
 <p><br></p>
-<p>En esta pestaña puedes ver todas las editoriales de los cuales tenemos libros en la tienda. Si haces click en alguno, podrás ver sus detalles.</p>
+<p>{% trans "En esta pestaña puedes ver todas las editoriales de los cuales tenemos libros en la tienda. Si haces click en alguno, podrás ver sus detalles" %}</p>
 <p><br></p>
 {% if editoriales %}
     <table>
@@ -41,7 +41,7 @@
         {% endfor %}
     </table>
 {% else %}
-<p>No hay ninguna editorial registrada en la tienda.</p>
+<p>{% trans "No hay ninguna editorial registrada en la tienda" %}</p>
 {% endif %}
 {% endblock %}
 

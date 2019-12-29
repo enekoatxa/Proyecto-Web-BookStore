@@ -1,33 +1,6 @@
 {% extends 'base.html' %}
-{% load i18n %}
+
 {% block titulo %}   
-<form action= "{% url 'set_language' %}" method="post"> {% csrf_token %}
-
-        <input name="next" type="hidden" value= "{{redirect_to }}" />
-
-        <select name = "language">
-
-            {% get_current_language as LANGUAGE_CODE %}
-
-            {% get_available_languages as LANGUAGES %}
-
-            {% get_language_info_list for LANGUAGES as languages%}
-
-            {% for language in languages%}
-
-                <option value="{{language.code}}" {% if language.code == LANGUAGE_CODE %} selected {%endif%}>
-
-                    {{ language.name_local }} ({{ language.code }})
-
-                </option>
-
-            {% endfor%}
-
-        </select>
-
-        <input type="submit" value="Change" />
-
-    </form>
 
 <a class="logo blanco" href="/">D A !</a>
         
@@ -60,7 +33,7 @@
         </ul>
         
         <div class="clearfix"></div>
-        {% endblock %}
+{% endblock %}
 
 {% block contenido %}
 
@@ -87,7 +60,7 @@
                             <div class="swiper-scrollbar resp"></div>
                             <div class="col-md-10">
                                 
-                                <h5 class="mb-50 color-white"><b>NOVEDADES</b></h5>
+                                <h5 class="mb-50 color-white"><b> {% trans "NOVEDADES" %}</b></h5>
                                 
                                 <div class="swiper-container oflow-visible" data-slide-effect="slide" data-autoheight="false" 
                                     data-swiper-speed="500" data-swiper-margin="25" data-swiper-slides-per-view="2"
@@ -125,7 +98,7 @@
 {% endblock %}
 
 {% block TituloBarraDcha %}
-Búsqueda de autores
+{% trans "Búsqueda de autores" %}
 {% endblock %}
 {% block ListaBarraDcha %}
 {% for a in autores %}
@@ -134,7 +107,7 @@ Búsqueda de autores
 {% endblock %}
 
 {% block TituloBarraDcha2 %}
-Búsqueda de editoriales
+{% trans "Búsqueda de editoriales %}
 {% endblock %}
 
 {% block ListaBarraDcha2 %}
@@ -144,7 +117,7 @@ Búsqueda de editoriales
 {% endblock %}
 
 {% block sliderCentral %}
-<h4 class="mb-30 mt-20 clearfix"><b>Autores</b></h4>
+<h4 class="mb-30 mt-20 clearfix"><b>{% trans "Autores" %}</b></h4>
                     
                     <div class="row">
                         <div class="col-sm-12 mb-30 swiper-area ">
@@ -154,7 +127,7 @@ Búsqueda de editoriales
                                 <div class="mx-w-200x">
                                     <h5 class="color-grey"><b>**********</b></h5>
                                     <h2 class="mtb-10">
-                                        <b>Nuestros autores</b></h2>
+                                        <b>{% trans "Nuestros autores %}</b></h2>
                                 </div><!-- mx-w-200x -->
                                 
                                 <div class="all-scroll pos-relative mt-50">
