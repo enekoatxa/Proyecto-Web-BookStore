@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-07 10:49+0100\n"
+"POT-Creation-Date: 2020-01-07 21:55+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,7 +38,7 @@ msgstr "Ez daukagu informaziorik"
 #: .\appBookStore\templates\detailAutor.html:24
 #: .\appBookStore\templates\detailEditorial.html:12
 #: .\appBookStore\templates\detailLibro.html:25
-#: .\appBookStore\templates\index.html:32
+#: .\appBookStore\templates\index.html:26
 #: .\appBookStore\templates\listaAutores.html:23
 #: .\appBookStore\templates\listaEditoriales.html:26
 #: .\appBookStore\templates\listaLibros.html:26
@@ -49,7 +49,7 @@ msgstr "Hasiera"
 #: .\appBookStore\templates\detailAutor.html:61
 #: .\appBookStore\templates\detailEditorial.html:13
 #: .\appBookStore\templates\detailLibro.html:26
-#: .\appBookStore\templates\index.html:33
+#: .\appBookStore\templates\index.html:27
 #: .\appBookStore\templates\listaAutores.html:24
 #: .\appBookStore\templates\listaEditoriales.html:27
 #: .\appBookStore\templates\listaLibros.html:27
@@ -59,8 +59,8 @@ msgstr "Liburuak"
 #: .\appBookStore\templates\detailAutor.html:26
 #: .\appBookStore\templates\detailEditorial.html:14
 #: .\appBookStore\templates\detailLibro.html:27
-#: .\appBookStore\templates\index.html:34
-#: .\appBookStore\templates\index.html:137
+#: .\appBookStore\templates\index.html:28
+#: .\appBookStore\templates\index.html:131
 #: .\appBookStore\templates\listaAutores.html:25
 #: .\appBookStore\templates\listaEditoriales.html:28
 #: .\appBookStore\templates\listaLibros.html:28
@@ -70,7 +70,7 @@ msgstr "Autoreak"
 #: .\appBookStore\templates\detailAutor.html:27
 #: .\appBookStore\templates\detailEditorial.html:15
 #: .\appBookStore\templates\detailLibro.html:28
-#: .\appBookStore\templates\index.html:35
+#: .\appBookStore\templates\index.html:29
 #: .\appBookStore\templates\listaAutores.html:26
 #: .\appBookStore\templates\listaEditoriales.html:29
 #: .\appBookStore\templates\listaLibros.html:29
@@ -137,33 +137,40 @@ msgstr "Orrialde kopurua:"
 msgid "Editorial:"
 msgstr "Argitaletxea:"
 
+#: .\appBookStore\templates\detailLibro.html:81
+#, fuzzy
+#| msgid "Autores"
+msgid "Autores:"
+msgstr "Autoreak"
+
 #: .\appBookStore\templates\detailLibro.html:98
 msgid ""
 "Puedes hacer zoom en la portada, arrastrando el cursor por encima de ella"
 msgstr ""
-"Liburuaren azalean zooma egin dezakezu, kurtsorea bere gainetik pasatzen baduzu"
+"Liburuaren azalean zooma egin dezakezu, kurtsorea bere gainetik pasatzen "
+"baduzu"
 
 #: .\appBookStore\templates\detailLibro.html:145
 msgid "No existe este artículo"
 msgstr "Ez da artikulu hau existitzen"
 
-#: .\appBookStore\templates\index.html:63
+#: .\appBookStore\templates\index.html:57
 msgid "LIBRERÍA ATXA DORRONSORO"
 msgstr "ATXA DORRONSORO LIBURU DENDA"
 
-#: .\appBookStore\templates\index.html:77
+#: .\appBookStore\templates\index.html:71
 msgid "NOVEDADES"
 msgstr "BERRIAK"
 
-#: .\appBookStore\templates\index.html:116
+#: .\appBookStore\templates\index.html:110
 msgid "Búsqueda de autores"
 msgstr "Autore bilaketa"
 
-#: .\appBookStore\templates\index.html:126
+#: .\appBookStore\templates\index.html:120
 msgid "Busqueda de editoriales"
 msgstr "Argitaletxe bilaketa"
 
-#: .\appBookStore\templates\index.html:147
+#: .\appBookStore\templates\index.html:141
 msgid "Nuestros autores"
 msgstr "Gure autoreak"
 
@@ -177,8 +184,8 @@ msgid ""
 "tenemos libros en la tienda. Puedes buscar cualquier información del autor "
 "pinchando en su nombre"
 msgstr ""
-"Orrialde honetan ditugun autoreen zerrenda aurki dezakezu. Bilatu autore baten "
-"informazioa, bere izenean klik eginez"
+"Orrialde honetan ditugun autoreen zerrenda aurki dezakezu. Bilatu autore "
+"baten informazioa, bere izenean klik eginez"
 
 #: .\appBookStore\templates\listaAutores.html:56
 msgid "No hay ningun autor en la tienda"
@@ -192,8 +199,9 @@ msgstr "Argitaletxe zerrenda"
 msgid ""
 "En esta pestaña puedes ver todas las editoriales de los cuales tenemos "
 "libros en la tienda. Si haces click en alguno, podrás ver sus detalles"
-msgstr "Hau da dendan ditugun argitaletxeen zerrenda. Batean klik eginez "
-"gero, haren ezaugarriak ikus ditzakezu."
+msgstr ""
+"Hau da dendan ditugun argitaletxeen zerrenda. Batean klik eginez gero, haren "
+"ezaugarriak ikus ditzakezu."
 
 #: .\appBookStore\templates\listaEditoriales.html:60
 msgid "No hay ninguna editorial registrada en la tienda"
@@ -209,8 +217,8 @@ msgid ""
 "actualmente. ¡Están ordenados para que te aparezcan las últimas llegadas "
 "primero!"
 msgstr ""
-"Orrialde honetan orain ditugun liburuen zerrenda aurki dezakezu"
-"Liburu berrienak lehenengo agertzeko ordenatuta dituzu!"
+"Orrialde honetan orain ditugun liburuen zerrenda aurki dezakezuLiburu "
+"berrienak lehenengo agertzeko ordenatuta dituzu!"
 
 #: .\appBookStore\templates\listaLibros.html:51
 msgid "Haz click en cualquier libro para ver sus detalles"
