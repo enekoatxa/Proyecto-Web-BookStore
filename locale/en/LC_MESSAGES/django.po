@@ -99,7 +99,7 @@ msgstr "Publisher data"
 
 #: .\appBookStore\templates\detailEditorial.html:39
 msgid "Nombre de la editorial:"
-msgstr "Publisher name:"
+msgstr "Publisher name: "
 
 #: .\appBookStore\templates\detailEditorial.html:42
 msgid "Estos son todos los libros que tenemos de la editorial:"
@@ -111,23 +111,23 @@ msgstr "This article does not exist"
 
 #: .\appBookStore\templates\detailLibro.html:49
 msgid "Datos del libro:"
-msgstr "Book data:"
+msgstr "Book data: "
 
 #: .\appBookStore\templates\detailLibro.html:59
 msgid "Título:"
-msgstr "Title"
+msgstr "Title:"
 
 #: .\appBookStore\templates\detailLibro.html:62
 msgid "Género:"
-msgstr "Genre "
+msgstr "Genre:"
 
 #: .\appBookStore\templates\detailLibro.html:65
 msgid "Idioma:"
-msgstr "Language"
+msgstr "Language:"
 
 #: .\appBookStore\templates\detailLibro.html:68
 msgid "Edición:"
-msgstr "Edition"
+msgstr "Edition:"
 
 #: .\appBookStore\templates\detailLibro.html:74
 msgid "Número de páginas:"
@@ -135,7 +135,7 @@ msgstr "Number of pages:"
 
 #: .\appBookStore\templates\detailLibro.html:77
 msgid "Editorial:"
-msgstr "Publisher"
+msgstr "Publisher:"
 
 #: .\appBookStore\templates\detailLibro.html:98
 msgid ""
@@ -210,7 +210,7 @@ msgid ""
 "primero!"
 msgstr ""
 "In this tab you can see the list of all the books we have. They are orgnized "
-"to show you the latest arrivalsfirst!"
+"to show you the latest arrivals first!"
 
 #: .\appBookStore\templates\listaLibros.html:51
 msgid "Haz click en cualquier libro para ver sus detalles"
