@@ -2,7 +2,7 @@
 {% load i18n %}
     <p>{{libro.titulo}}</p>
     <p>{{libro.num_paginas}} {% trans "páginas" %}</p>
-    <p>{% trans "Año:" %}" {{libro.anyo}}</p>
+    <p>{% trans "Año:" %} {{libro.anyo}}</p>
     <p>{% trans "Editorial" %} {{libro.cod_editorial}}</p>
 {% else %}
     <p>{% trans "No tenemos información sobre este libro" %}</p>
