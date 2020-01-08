@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-07 21:55+0100\n"
+"POT-Creation-Date: 2020-01-08 14:58+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: .\appBookStore\templates\ajax.html:4
 msgid "páginas"
-msgstr "orrialdeak"
+msgstr "orrialde"
 
 #: .\appBookStore\templates\ajax.html:5
 #: .\appBookStore\templates\detailLibro.html:71
@@ -138,10 +138,8 @@ msgid "Editorial:"
 msgstr "Argitaletxea:"
 
 #: .\appBookStore\templates\detailLibro.html:81
-#, fuzzy
-#| msgid "Autores"
 msgid "Autores:"
-msgstr "Autoreak"
+msgstr "Autoreak:"
 
 #: .\appBookStore\templates\detailLibro.html:98
 msgid ""
