@@ -74,11 +74,11 @@
     </th>
     <th>
         {% load static %}
-        <li>
+        
         {% with ''|add:autor.foto.name as image_path %}
           <img class="autor" alt="{{ autor.foto.name }}" src="{% static image_path %}" height="400"/>
         {% endwith %}
-        </li>
+        
     </th>
   </tr>
 </table>
